@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block title %}Cadastro de Praticante{% endblock %}
+{% block content %}
+<h2 class="mb-4">Cadastro de Praticante</h2>
+
+<form method="post" class="row g-3">
+    {% csrf_token %}
+    <div class="col-md-6">
+        <label for="nome" class="form-label">Nome</label>
+        <input type="text" name="nome" class="form-control" required>
+    </div>
+
+    <div class="col-md-6">
+        <label for="responsavel" class="form-label">Responsável</label>
+        <input type="text" name="responsavel" class="form-control" required>
+    </div>
+
+    <div class="col-md-6">
+        <label for="telefone" class="form-label">Telefone</label>
+        <input type="text" name="telefone" class="form-control" required>
+    </div>
+
+    <div class="col-md-6">
+        <label for="voluntario" class="form-label">Voluntário</label>
+        <select name="voluntario" class="form-select">
+            <option value="">-- Nenhum --</option>
+            {% for v in voluntarios %}
+            <option value="{{ v.id }}">{{ v.nome }}</option>
+            {% endfor %}
+        </select>
+    </div>
+
+    <div class="col-md-6">
+        <label for="status" class="form-label">Status</label>
+        <select name="status" class="form-select">
+            <option value="fila">Fila de espera</option>
+            <option value="ativo">Em atendimento</option>
+            <option value="finalizado">Finalizado</option>
+        </select>
+    </div>
+
+    <div class="col-12">
+        <button type="submit" class="btn btn-success">Cadastrar</button>
+    </div>
+</form>
+{% endblock %}

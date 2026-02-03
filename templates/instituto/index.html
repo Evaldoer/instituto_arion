@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Instituto Árion{% endblock %}
+{% block content %}
+
+<div class="text-center mb-5">
+    <img src="{% static 'img/capa.jpeg' %}" alt="Instituto Árion" class="img-fluid rounded mb-3" style="max-width: 600px; height: auto;">
+    <h2>Bem-vindo ao Instituto Árion</h2>
+    <p class="lead">Equoterapia e Desenvolvimento Humano com foco na inclusão, dignidade e transformação social.</p>
+</div>
+
+<!-- QUEM SOMOS -->
+<section class="mb-5 text-center">
+    <img src="{% static 'img/quem_somos.jpeg' %}" alt="Quem Somos" class="img-fluid rounded mb-3" style="max-width: 600px; height: auto;">
+    <h3>Quem Somos</h3>
+    <p>Somos uma ONG sem fins lucrativos, sediada em Suzano – SP, dedicada a desenvolver, habilitar e reabilitar pessoas com deficiência, síndromes, transtornos do neurodesenvolvimento e emocionais. Atuamos com equoterapia e acolhimento familiar, promovendo inclusão escolar, social e profissional.</p>
+</section>
+
+<!-- MISSÃO -->
+<section class="mb-5 text-center"> <img src="{% static 'img/valores.jpeg' %}" alt="Missão" class="img-fluid rounded mb-3" style="width: 520px; height: 500px; object-fit: cover;">
+    <h3>Missão</h3>
+    <p>Cuidar das pessoas para transformar o mundo. Promover o desenvolvimento humano integral com respeito às singularidades, através da equoterapia e da atuação multidisciplinar.</p>
+</section>
+
+<!-- COMO AJUDAR -->
+<section class="mb-5">
+    <h3>Como Ajudar</h3>
+    <ul>
+        <li>Adotar um praticante por 1 ano (R$600/mês).</li>
+        <li>Indicar o projeto para empresas com responsabilidade social.</li>
+        <li>Doar insumos de obras (engenharia, arquitetura, paisagismo).</li>
+        <li>Ser voluntário especialista.</li>
+        <li>Divulgar o @instituto.arion nas redes sociais.</li>
+    </ul>
+    <a href="{% url 'praticantes:novo' %}" class="btn btn-success mt-2">Adotar um Praticante</a>
+    <a href="{% url 'voluntarios:novo' %}" class="btn btn-primary mt-2">Quero ser Voluntário</a>
+</section>
+
+<!-- PROJETOS -->
+<section class="mb-5">
+    <h3>Projetos e Conquistas</h3>
+    <ul>
+        <li>Certificação de utilidade pública em Poá (2020) e Suzano (2024).</li>
+        <li>Seminários de Educação Inclusiva com mais de 1000 participantes.</li>
+        <li>Reconhecimento como Empresa Amiga do Autista.</li>
+        <li>Mais de 300 pessoas atendidas desde a fundação.</li>
+        <li>Parcerias com Rotary, conselhos municipais e universidades.</li>
+    </ul>
+</section>
+
+<!-- CONTATO -->
+<section class="mb-5">
+    <h3>Contato</h3>
+    <p>Email: contato@institutoarion.org</p>
+    <p>Telefone: +55 11 9 1351-4976</p>
+    <p>Instagram: <a href="https://instagram.com/instituto.arion" target="_blank">@instituto.arion</a></p>
+    <p>Endereço: Rua Particular Manoel Cabrera, 167 – Vila Barros – Suzano – SP</p>
+    <p><strong>Visitas mediante agendamento.</strong></p>
+</section>
+
+<div class="row text-center mb-5">
+    <div class="col-md-4"> <img src="{% static 'img/praticante.jpeg' %}" alt="Praticante" class="img-fluid rounded mb-3" style="width: 400px; height: 250px; object-fit: cover;"> <h4>Praticantes</h4> <p>Atendimento com equoterapia e inclusão.</p> </div> <div class="col-md-4"> <img src="{% static 'img/projetos.jpeg' %}" alt="Voluntário" class="img-fluid rounded mb-3" style="width: 400px; height: 250px; object-fit: cover;"> <h4>Voluntários</h4> <p>Equipe dedicada ao acolhimento e transformação.</p> </div> <div class="col-md-4"> <img src="{% static 'img/voluntario.jpeg' %}" alt="Projetos" class="img-fluid rounded mb-3" style="width: 400px; height: 250px; object-fit: cover;"> <h4>Projetos</h4> <p>Iniciativas sociais e educacionais de impacto.</p> </div> </div>
+
+{% endblock %}

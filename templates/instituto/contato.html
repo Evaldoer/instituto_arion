@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block title %}Contato{% endblock %}
+{% block content %}
+
+<div class="text-center mb-5">
+    <h2>Contato</h2>
+    <p class="lead">Entre em contato conosco. Sua mensagem é muito importante!</p>
+</div>
+
+<form method="post" class="row g-3">
+    {% csrf_token %}
+    
+    <div class="col-md-6">
+        <label for="nome" class="form-label">Nome</label>
+        <input type="text" name="nome" class="form-control" required>
+    </div>
+
+    <div class="col-md-6">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" name="email" class="form-control" required>
+    </div>
+
+    <div class="col-12">
+        <label for="mensagem" class="form-label">Mensagem</label>
+        <textarea name="mensagem" rows="5" class="form-control" required></textarea>
+    </div>
+
+    <div class="col-12 text-center">
+        <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
+    </div>
+</form>
+
+<div class="mt-5 text-center">
+    <h4>Outros canais de contato</h4>
+    <p>Email: contato@institutoarion.org</p>
+    <p>Telefone: +55 11 9 1351-4976</p>
+    <p>Instagram: <a href="https://instagram.com/instituto.arion" target="_blank">@instituto.arion</a></p>
+    <p>Endereço: Rua Particular Manoel Cabrera, 167 – Vila Barros – Suzano – SP</p>
+</div>
+
+<div class="text-center mt-4">
+    <a href="{% url 'instituto:home' %}" class="btn btn-secondary">Voltar à Página Inicial</a>
+</div>
+
+{% endblock %}

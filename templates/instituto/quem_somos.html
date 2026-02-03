@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}Quem Somos{% endblock %}
+{% block content %}
+
+<div class="text-center mb-5">
+    <h2>Quem Somos</h2>
+    <p class="lead">Cuidando das pessoas para transformar o mundo.</p>
+</div>
+
+<section class="mb-4">
+    <p>
+        O <strong>Instituto Árion</strong> é uma Organização Não Governamental, sem fins lucrativos e de utilidade pública,
+        voltada para desenvolver, habilitar e reabilitar pessoas com deficiência, síndromes, transtornos do neurodesenvolvimento
+        e emocionais. Nosso trabalho promove inclusão escolar, social, no mercado de trabalho e no mundo.
+    </p>
+    <p>
+        A sede está localizada em <strong>Suzano – Alto Tietê – SP</strong>, e desde 2018 já atendemos centenas de famílias
+        através da equoterapia e acolhimento humanizado.
+    </p>
+</section>
+
+<section class="mb-4">
+    <h4>Nossos Valores</h4>
+    <ul>
+        <li>Ética e verdade</li>
+        <li>Amorosidade e atitude positiva</li>
+        <li>Inovação e excelência</li>
+        <li>Trabalho em equipe</li>
+        <li>Respeito e inclusão</li>
+    </ul>
+</section>
+
+<div class="text-center mt-4">
+    <a href="{% url 'instituto:home' %}" class="btn btn-secondary">Voltar à Página Inicial</a>
+</div>
+
+{% endblock %}

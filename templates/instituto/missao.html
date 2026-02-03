@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block title %}Missão{% endblock %}
+{% block content %}
+
+<div class="text-center mb-5">
+    <h2>Missão do Instituto Árion</h2>
+    <p class="lead">Cuidando das pessoas para transformar o mundo.</p>
+</div>
+
+<section class="mb-4">
+    <p>
+        O Instituto Árion tem como missão promover o <strong>desenvolvimento humano integral</strong>,
+        respeitando as singularidades de cada praticante. Através da <strong>equoterapia</strong>,
+        buscamos habilitar e reabilitar pessoas com deficiência, síndromes e transtornos,
+        colaborando para sua inclusão escolar, social e profissional.
+    </p>
+</section>
+
+<section class="mb-4">
+    <h4>Nosso Compromisso</h4>
+    <ul>
+        <li>Oferecer acolhimento e respeito às famílias.</li>
+        <li>Valorizar as potencialidades e habilidades de cada praticante.</li>
+        <li>Promover inclusão e dignidade humana.</li>
+        <li>Atuar com ética, amorosidade e excelência.</li>
+    </ul>
+</section>
+
+<section class="mb-4">
+    <h4>ODS/ONU – Agenda 2030</h4>
+    <p>
+        Estamos alinhados com os Objetivos de Desenvolvimento Sustentável (ODS), contribuindo para:
+    </p>
+    <ul>
+        <li>Saúde e bem-estar.</li>
+        <li>Educação de qualidade.</li>
+        <li>Redução das desigualdades.</li>
+        <li>Consumo e produção responsáveis.</li>
+        <li>Energia limpa e acessível.</li>
+        <li>Vida terrestre.</li>
+        <li>Paz, justiça e instituições eficazes.</li>
+    </ul>
+</section>
+
+<div class="text-center mt-4">
+    <a href="{% url 'instituto:home' %}" class="btn btn-secondary">Voltar à Página Inicial</a>
+</div>
+
+{% endblock %}

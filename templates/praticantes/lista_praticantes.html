@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block title %}Lista de Praticantes{% endblock %}
+{% block content %}
+
+<h2>Lista de Praticantes</h2>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Responsável</th>
+            <th>Telefone</th>
+            <th>Voluntário</th>
+            <th>Status</th>
+            <th>Ações</th> <!-- Aqui -->
+        </tr>
+    </thead>
+    <tbody>
+        {% for p in praticantes %}
+        <tr>
+            <td>{{ p.nome }}</td>
+            <td>{{ p.responsavel }}</td>
+            <td>{{ p.telefone }}</td>
+            <td>
+                {% if p.voluntario %}
+                    {{ p.voluntario.nome }}
+                {% else %}
+                    Sem voluntário
+                {% endif %}
+            </td>
+            <td>{{ p.get_status_display }}</td>
+            <td>
+                <a href="{% url 'praticantes:editar' p.id %}" class="btn btn-sm btn-warning">Editar</a>
+                <a href="{% url 'praticantes:excluir' p.id %}" class="btn btn-sm btn-danger">Excluir</a>
+            </td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="6" class="text-center">Nenhum praticante cadastrado ainda.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

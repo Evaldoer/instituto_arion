@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}Como Ajudar{% endblock %}
+{% block content %}
+
+<div class="text-center mb-5">
+    <h2>Como Ajudar</h2>
+    <p class="lead">Sua decisão pode mudar a vida de alguém!</p>
+</div>
+
+<section class="mb-4">
+    <p>
+        Existem várias formas de apoiar o Instituto Árion e contribuir para a transformação de vidas:
+    </p>
+    <ul>
+        <li><strong>Adotar um praticante</strong> por 1 ano (R$600/mês).</li>
+        <li>Indicar o projeto para empresas que desejam investir em responsabilidade social.</li>
+        <li>Doar insumos de qualidade que sobram em obras (engenharia, arquitetura, paisagismo).</li>
+        <li>Ser um <strong>voluntário especialista</strong> e gerar impacto em centenas de famílias.</li>
+        <li>Divulgar o <strong>@instituto.arion</strong> nas redes sociais.</li>
+    </ul>
+</section>
+
+<section class="mb-4 text-center">
+    <a href="{% url 'praticantes:novo' %}" class="btn btn-success me-2">Adotar um Praticante</a>
+    <a href="{% url 'voluntarios:novo' %}" class="btn btn-primary">Quero ser Voluntário</a>
+</section>
+
+<div class="text-center mt-4">
+    <a href="{% url 'instituto:home' %}" class="btn btn-secondary">Voltar à Página Inicial</a>
+</div>
+
+{% endblock %}

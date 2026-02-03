@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Instituto Árion{% endblock %}</title>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+</head>
+<body>
+
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{% url 'instituto:home' %}">Instituto Árion</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+
+                    <!-- Instituto -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="institutoDropdown" role="button" data-bs-toggle="dropdown">
+                            Instituto
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="{% url 'instituto:home' %}">Início</a></li>
+                            <li><a class="dropdown-item" href="{% url 'instituto:quem_somos' %}">Quem Somos</a></li>
+                            <li><a class="dropdown-item" href="{% url 'instituto:projetos' %}">Projetos</a></li>
+                            <li><a class="dropdown-item" href="{% url 'instituto:ajuda' %}">Como Ajudar</a></li>
+                            <li><a class="dropdown-item" href="{% url 'instituto:contato' %}">Contato</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Voluntários -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="voluntariosDropdown" role="button" data-bs-toggle="dropdown">
+                            Voluntários
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="{% url 'voluntarios:novo' %}">Quero ser voluntário</a></li>
+                            <li><a class="dropdown-item" href="{% url 'voluntarios:lista' %}">Lista de voluntários</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Praticantes -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="praticantesDropdown" role="button" data-bs-toggle="dropdown">
+                            Praticantes
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="{% url 'praticantes:novo' %}">Cadastrar praticante</a></li>
+                            <li><a class="dropdown-item" href="{% url 'praticantes:lista' %}">Lista de praticantes</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<main class="container my-4">
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-success">{{ message }}</div>
+        {% endfor %}
+    {% endif %}
+
+    {% block content %}
+    {% endblock %}
+</main>
+
+<footer class="bg-light text-center p-3 mt-4">
+    <hr>
+    <p>© 2026 – Instituto Árion</p>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
