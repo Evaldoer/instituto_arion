@@ -12,13 +12,14 @@ from decouple import config
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Segurança
-SECRET_KEY = config("SECRET_KEY")  # pega do Environment Variable
-DEBUG = config("DEBUG", default=False, cast=bool)
+SECRET_KEY = config("SECRET_KEY", default="django-insecure-chave-local")  
+DEBUG = config("DEBUG", default=True, cast=bool)
 
 # Render exige que o domínio esteja no ALLOWED_HOSTS
 ALLOWED_HOSTS = [
     "instituto-arion.onrender.com",  # domínio do Render
     "localhost",                     # útil para testes locais
+    "127.0.0.1",                     # útil para testes locais
 ]
 
 # Aplicativos instalados
@@ -66,10 +67,10 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "config.wsgi.application"
 
-# Banco de dados (Render usa DATABASE_URL)
+# Banco de dados (Render usa DATABASE_URL, local usa SQLite)
 DATABASES = {
     "default": dj_database_url.config(
-        default=config("DATABASE_URL")
+        default=config("DATABASE_URL", default=f"sqlite:///{BASE_DIR / 'db.sqlite3'}")
     )
 }
 
