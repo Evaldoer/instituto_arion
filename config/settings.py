@@ -39,6 +39,7 @@ INSTALLED_APPS = [
 # Middleware
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",  # <- necessário para servir estáticos no Render
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -88,14 +89,17 @@ TIME_ZONE = "America/Sao_Paulo"
 USE_I18N = True
 USE_TZ = True
 
-# Arquivos estáticos (CSS, JS)
+# Arquivos estáticos (CSS, JS, imagens)
 STATIC_URL = "/static/"
 STATICFILES_DIRS = [
     BASE_DIR / "static",  # pasta static global
 ]
 STATIC_ROOT = BASE_DIR / "staticfiles"  # necessário para Render coletar
 
-# Arquivos de mídia (imagens, uploads)
+# Configuração do WhiteNoise para servir estáticos em produção
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
+# Arquivos de mídia (uploads de usuários)
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"
 
