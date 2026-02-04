@@ -87,12 +87,16 @@ TIME_ZONE = "America/Sao_Paulo"
 USE_I18N = True
 USE_TZ = True
 
-# Arquivos estáticos (CSS, JS, imagens)
+# Arquivos estáticos (CSS, JS)
 STATIC_URL = "/static/"
 STATICFILES_DIRS = [
     BASE_DIR / "static",  # pasta static global
 ]
 STATIC_ROOT = BASE_DIR / "staticfiles"  # necessário para Render coletar
+
+# Arquivos de mídia (imagens, uploads)
+MEDIA_URL = "/media/"
+MEDIA_ROOT = BASE_DIR / "media"
 
 # Campo padrão para chaves primárias
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
