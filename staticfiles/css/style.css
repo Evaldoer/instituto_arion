@@ -1,0 +1,207 @@
+/* =========================
+   RESET / BASE
+========================= */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f6f8;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* =========================
+   HEADER
+========================= */
+header {
+    background-color: #003366;
+    color: white;
+    padding: 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 26px;
+}
+
+/* =========================
+   NAV
+========================= */
+nav {
+    margin-top: 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-right: 16px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* =========================
+   MAIN CONTENT
+========================= */
+main {
+    max-width: 900px;
+    margin: 25px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+h2 {
+    color: #003366;
+    margin-top: 0;
+}
+
+p {
+    line-height: 1.6;
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+    background-color: #eee;
+    text-align: center;
+    padding: 12px;
+    margin-top: 40px;
+    color: #555;
+    font-size: 14px;
+}
+
+/* =========================
+   MESSAGES (Django)
+========================= */
+.messages,
+p[style*="color: green"] {
+    background-color: #e6ffea;
+    border: 1px solid #9be7a3;
+    padding: 12px;
+    margin: 20px auto;
+    max-width: 900px;
+    border-radius: 4px;
+    color: #1f7a32;
+    font-weight: bold;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+.btn {
+    display: inline-block;
+    background-color: #003366;
+    color: #ffffff;
+    padding: 12px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #0055a5;
+}
+
+/* =========================
+   FORMS
+========================= */
+form {
+    margin-top: 25px;
+}
+
+form label {
+    display: block;
+    margin-top: 16px;
+    font-weight: bold;
+}
+
+form input,
+form select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+form input:focus,
+form select:focus {
+    outline: none;
+    border-color: #003366;
+}
+
+form button {
+    margin-top: 20px;
+    background-color: #003366;
+    color: white;
+    padding: 12px 18px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+form button:hover {
+    background-color: #0055a5;
+}
+
+/* =========================
+   LISTS
+========================= */
+ul {
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+/* =========================
+   TABELA DE VOLUNTÁRIOS
+========================= */
+.tabela-voluntarios {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.tabela-voluntarios th {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.tabela-voluntarios td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.tabela-voluntarios tr.linha-par {
+    background-color: #f9f9f9;
+}
+
+.tabela-voluntarios tr.linha-impar {
+    background-color: #ffffff;
+}
+
+.tabela-voluntarios tr:hover {
+    background-color: #e0f7fa;
+}
+
+.tabela-voluntarios .percent {
+    color: #2196F3;
+    font-weight: bold;
+}
